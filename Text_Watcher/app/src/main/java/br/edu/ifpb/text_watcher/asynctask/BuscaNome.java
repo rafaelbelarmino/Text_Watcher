@@ -11,6 +11,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.Gson;
 
 import br.edu.ifpb.text_watcher.MainActivity;
 import br.edu.ifpb.text_watcher.util.HttpService;
