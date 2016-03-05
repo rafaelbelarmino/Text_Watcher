@@ -16,12 +16,16 @@ import com.google.gson.Gson;
 import br.edu.ifpb.text_watcher.MainActivity;
 import br.edu.ifpb.text_watcher.util.HttpService;
 import br.edu.ifpb.text_watcher.util.Response;
+import br.edu.ifpb.text_watcher.entidade.Pessoa;
+import br.edu.ifpb.text_watcher.callback.BuscarPessoaCallBack;
 
 
 /**
  * Created by Rafael on 27/02/2016.
  */
 public class BuscaNome extends AsyncTask<JSONObject, Void, Response> {
+
+    private BuscarPessoaCallBack buscarNomeCallBack;
 
     protected Response doInBackground(JSONObject... jsons) {
 
@@ -43,6 +47,12 @@ public class BuscaNome extends AsyncTask<JSONObject, Void, Response> {
         return response;
 
     }
+
+    public BuscarNomeAsyncTask(BuscarPessoaCallBack buscarNomeCallBack) {
+
+        this.buscarNomeCallBack = buscarNomeCallBack;
+    }
+
     protected void onPostExecute(Response response) {
 
         String nome = null;
